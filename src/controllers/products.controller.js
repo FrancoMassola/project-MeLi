@@ -1,12 +1,16 @@
 const { apiMeLiRequest } = require("../helpers/apiMeLi");
 
 //define the function to search products
-const searchProducts = (req, res) => {
+const searchProducts = async (req, res) => {
   try {
     let productToSearch = req.query.q;
     let meliURL = `https://api.mercadolibre.com/sites/MLA/search?q=${productToSearch}`;
-    apiMeLiRequest(meliURL);
-  } catch (err) {}
+    const responseMapped = await apiMeLiRequest(meliURL);
+    res.json(responseMapped);
+  } catch (err) {
+    res.status(500);
+    res.send(err.message);
+  }
 };
 
 //export all the functions

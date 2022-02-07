@@ -4,10 +4,11 @@ const jsonMapper = require("json-mapper-json");
 //api MeLi request
 const apiMeLiRequest = async (url = "") => {
   const apiMeliResponse = await axios.get(url);
-  const dataFormatted = await formatResponse(apiMeliResponse);
+  const responseMapped = await formatResponse(apiMeliResponse);
+  return responseMapped;
 };
 
-const formatResponse = (apiMeliResponse) => {
+const formatResponse = async (apiMeliResponse) => {
   //filters - results -> (items)
   const { filters, results } = apiMeliResponse.data;
 
@@ -16,7 +17,7 @@ const formatResponse = (apiMeliResponse) => {
   const categoryValues = values[0].path_from_root;
 
   //map to a new json response object
-  jsonMapper(
+  return jsonMapper(
     {
       root: {
         author: {
@@ -42,7 +43,7 @@ const formatResponse = (apiMeliResponse) => {
         },
       },
       categories: {
-        //add the name of categories into a new array
+        //add the name of categories into a new string array
         path: "root.categories",
         type: Array[String],
         formatting: (categoryValues) => {
@@ -79,9 +80,7 @@ const formatResponse = (apiMeliResponse) => {
           ),
       },
     }
-  ).then((result) => {
-    console.log(result);
-  });
+  );
 };
 
 //export all the functions
