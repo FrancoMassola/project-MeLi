@@ -16,7 +16,14 @@ export const useFetch = (productToSearch) => {
     setState({ data: null, loading: true, error: null });
     if (Object.entries(productToSearch).length != 0) {
       const apiResponse = getProducts(productToSearch);
-      apiResponse.then((productSearched) => [console.log(productSearched)]);
+      apiResponse.then((productSearched) =>
+        setState({
+          data: productSearched,
+          loading: false,
+        })
+      );
     }
   }, [productToSearch]);
+
+  return state;
 };
