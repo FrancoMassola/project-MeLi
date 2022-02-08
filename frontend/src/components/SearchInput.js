@@ -1,31 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "../hooks/useForm";
 
 export const SearchInput = ({ setproductToSearch }) => {
-  const [inputValue, setinputValue] = useState("");
+  const [formValues, handleInputChange] = useForm({ productToSearch: "" });
 
   //to navigate to other screens
   const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    setinputValue(e.target.value);
-  };
+  //destruct the values of the form
+  const { productToSearch } = formValues;
 
+  //useRef for reference the view navigation and the demount
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (inputValue.trim().length > 2) {
-      setproductToSearch(inputValue);
-      setinputValue("");
-      navigate(`/items?search=${inputValue}`);
+    if (productToSearch.trim().length > 2) {
+      setproductToSearch(productToSearch);
+      navigate(`/items?search=${productToSearch}`);
     }
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleInputChange} />
+        <input
+          type="text"
+          name="productToSearch"
+          value={productToSearch}
+          onChange={handleInputChange}
+        />
       </form>
     </>
   );
