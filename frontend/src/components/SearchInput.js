@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 export const SearchInput = ({ setproductToSearch }) => {
   const [inputValue, setinputValue] = useState("");
+
+  //to navigate to other screens
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setinputValue(e.target.value);
@@ -14,6 +18,7 @@ export const SearchInput = ({ setproductToSearch }) => {
     if (inputValue.trim().length > 2) {
       setproductToSearch(inputValue);
       setinputValue("");
+      navigate(`/items?search=${inputValue}`);
     }
   };
 

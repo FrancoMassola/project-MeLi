@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { SearchProducts } from "./components/pages/SearchProducts";
+import { MainApp } from "./components/MainApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchProducts />
+    <MainApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
