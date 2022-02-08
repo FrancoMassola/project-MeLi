@@ -5,7 +5,7 @@ export const useForm = (initialState = {}) => {
 
   const handleInputChange = ({ target }) => {
     setValues({
-      productToSearch: target.value,
+      [target.name]: target.value,
     });
   };
   return [values, handleInputChange];
