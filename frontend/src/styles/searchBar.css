@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.container {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe600;
+}
+
+.logo_ML-box {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+img {
+  width: 35%;
+  line-height: 10px;
+}
