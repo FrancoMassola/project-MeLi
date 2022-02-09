@@ -27,7 +27,7 @@ export const Results = () => {
     /* A possible improvement in the future should be to implement a 
      pagination so as not to have conflicts with the repeated key prop in 
      the children component of the .map, because I use random elements in the array to show 
-     -- I fix it adding the index of the (map Loop) to the product id as a key*/
+     -- I fix it concatenating the index of the (map Loop) to the product id as a key*/
 
     for (let index = 0; index < 4; index++) {
       productArrayToShow.push(

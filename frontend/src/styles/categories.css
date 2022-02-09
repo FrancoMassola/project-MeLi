@@ -1,3 +1,17 @@
 .category{
     margin-left: 17px;
 }
+
+.categories-container{
+    display: flex;
+    align-items: center;
+}
+.category{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-categoy{
+    margin-left: 10px;
+}
