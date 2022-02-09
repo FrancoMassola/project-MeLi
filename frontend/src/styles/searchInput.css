@@ -1,15 +1,29 @@
-.searchIcon{
-    width: 10px;
-    height: 10px;
-    margin-left: 2px;
+.searchIcon {
+  width: 12px;
+  height: 12px;
+  background-color: #EEEEEE;
+  margin-top: 5px;
 }
 
-input{
-    width: 100%;
+input {
+  width: 100%;
+  color: #999999;
+  border: white;
+  height: 21px;
+  border-radius: 2px;
 }
 
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+}
+
+button{
+    height: 22px;
+    width: 22px;
+    background-color: #EEEEEE;
+    border: white;
+    border-radius: 2px;
 }

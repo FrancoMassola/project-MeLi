@@ -30,10 +30,11 @@ export const SearchInput = ({ setproductToSearch }) => {
           name="productToSearch"
           value={productToSearch}
           onChange={handleInputChange}
+          placeholder="Nunca dejes de buscar"
         />
-        <a type="submit">
+        <button type="submit">
           <img className="searchIcon" src="/assets/ic_Search.png" alt="" />
-        </a>
+        </button>
       </form>
     </>
   );
