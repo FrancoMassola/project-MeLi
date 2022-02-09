@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { getProducts } from "../helpers/getProducts";
 
-export const useFetch = (productToSearch) => {
+export const useFetch = (url = "", params = "") => {
   const [state, setState] = useState({ data: {}, loading: true });
 
+  //to handle the component dismount and the setState
   const isMounted = useRef(true);
 
   useEffect(() => {
@@ -13,17 +14,17 @@ export const useFetch = (productToSearch) => {
   }, []);
 
   useEffect(() => {
+    console.log(url);
+    console.log(params);
     setState({ data: null, loading: true, error: null });
-    if (Object.entries(productToSearch).length != 0) {
-      const apiResponse = getProducts(productToSearch);
-      apiResponse.then((productSearched) =>
-        setState({
-          data: productSearched,
-          loading: false,
-        })
-      );
-    }
-  }, [productToSearch]);
+    const apiResponse = getProducts(url, params);
+    apiResponse.then((dataSearched) =>
+      setState({
+        data: dataSearched,
+        loading: false,
+      })
+    );
+  }, [url]);
 
   return state;
 };

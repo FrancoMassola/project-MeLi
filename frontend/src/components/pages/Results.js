@@ -13,7 +13,9 @@ export const Results = () => {
   //se queryString to get and parse the value of query - I could use Context API for handle the name of product to search
   const { search = "" } = queryString.parse(location.search);
 
-  const { data, loading } = useFetch(search);
+  const url = `http://localhost:4000/api/items?q=${search}`;
+
+  const { data, loading } = useFetch(url);
 
   //state for handle the product to search
   const [, setproductToSearch] = useState(search);
