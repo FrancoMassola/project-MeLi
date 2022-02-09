@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "../hooks/useForm";
-import '../styles/searchInput.css'
+import { useForm } from "../../hooks/useForm";
+import '../../styles/searchInput.css'
 
 export const SearchInput = ({ setproductToSearch }) => {
   const [formValues, handleInputChange] = useForm({ productToSearch: "" });

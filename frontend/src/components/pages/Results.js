@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { SearchBar } from "../SearchBar";
+import { SearchBar } from "../shared/SearchBar";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import "../../styles/loading.css";
 import "../../styles/cards.css";
-import { ProductCard } from "../ProductCard";
-import { Categories } from "../result-view/Categories";
+import { ProductCard } from "../results-product/ProductCard";
+import { Categories } from "../shared/Categories";
 
 export const Results = () => {
   const location = useLocation();
-  //se queryString to get and parse the value of query
+  //se queryString to get and parse the value of query - I could use Context API for handle the name of product to search
   const { search = "" } = queryString.parse(location.search);
 
   const { data, loading } = useFetch(search);
