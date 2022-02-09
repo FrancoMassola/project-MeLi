@@ -1,7 +1,32 @@
-.product-details-container{
+.product-detail-image{
+    height: 680px;
+    width: 680px;
+}
+
+.product-info-container{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.product-info{
+    padding-right: 32px;
+    list-style: none;
+}
+
+.details-firstRow{
+    margin: auto;
+    background-color: white;
+    width: 70%;
+    padding: 0;
+    display: flex;
+}
+
+.product-description-container{
     margin: auto;
     background-color: white;
     list-style: none;
-    width: fit-content;
+    width: 70%;
     padding: 0;
+    display: flex; 
+    flex-flow: column; 
 }
