@@ -20,11 +20,13 @@ export const Results = () => {
 
   //limit to only 4 randoms products to show
   if (!loading) {
+    //destruct props of the data, for get items and categories
+    var { categories, items } = data;
     var productArrayToShow = [];
 
     for (let index = 0; index < 4; index++) {
       productArrayToShow.push(
-        data.items[parseInt(Math.random() * (data.items.length - 0) + 0)]
+        items[parseInt(Math.random() * (items.length - 0) + 0)]
       );
     }
   }
@@ -42,10 +44,9 @@ export const Results = () => {
         </div>
       ) : (
         <div className="card-container">
-          
           <ul className="ul-list-items">
             <div className="categories">
-            <Categories />
+              <Categories categories={categories} />
             </div>
             {productArrayToShow.map((product) => {
               console.log(product.id);
