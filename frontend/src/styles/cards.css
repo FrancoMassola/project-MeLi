@@ -32,7 +32,6 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  
 }
 
 .ul-list-items {
@@ -50,16 +49,11 @@
   padding-bottom: 32px;
 }
 
-.categories{
-  margin: auto;
-  background-color: #EEEEEE;
-}
-
-.link-productDetails{
+.link-productDetails {
   color: #000000;
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.condition{
+.condition {
   color: #666666;
 }

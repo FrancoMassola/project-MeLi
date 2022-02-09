@@ -18,12 +18,15 @@ export const useFetch = (url = "", params = "") => {
     console.log(params);
     setState({ data: null, loading: true, error: null });
     const apiResponse = getProducts(url, params);
-    apiResponse.then((dataSearched) =>
-      setState({
-        data: dataSearched,
-        loading: false,
-      })
-    );
+    //this validation is in case that the component will be dismount before to setState
+    if (isMounted.current) {
+      apiResponse.then((dataSearched) =>
+        setState({
+          data: dataSearched,
+          loading: false,
+        })
+      );
+    }
   }, [url]);
 
   return state;
