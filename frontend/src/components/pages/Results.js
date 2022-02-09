@@ -24,6 +24,11 @@ export const Results = () => {
     var { categories, items } = data;
     var productArrayToShow = [];
 
+    /* A possible improvement in the future should be to implement a 
+     pagination so as not to have conflicts with the repeated key prop in 
+     the children component of the .map, because I use random elements in the array to show 
+     -- I fix it adding the index of the (map Loop) to the product id as a key*/
+
     for (let index = 0; index < 4; index++) {
       productArrayToShow.push(
         items[parseInt(Math.random() * (items.length - 0) + 0)]
@@ -48,10 +53,9 @@ export const Results = () => {
             <div className="categories">
               <Categories categories={categories} />
             </div>
-            {productArrayToShow.map((product) => {
-              console.log(product.id);
+            {productArrayToShow.map((product, index) => {
               return (
-                <li key={product.id}>
+                <li key={product.id.concat(String(index))}>
                   <ProductCard {...product} />
                 </li>
               );

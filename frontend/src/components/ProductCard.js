@@ -9,7 +9,7 @@ export const ProductCard = ({
   condition,
   free_shipping,
 }) => {
-  console.log(free_shipping);
+
   return (
     <div className="card">
       <div className="card-first-col">
