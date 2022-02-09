@@ -181,6 +181,7 @@ const formatResponse_searchById = (
           nested: {
             id: { path: "id", type: String },
             title: { path: "title", type: String },
+            price: { path: "price", type: Number },
             currency: { path: "price.currency", type: Number },
             amount: { path: "price.amount", type: Number },
             decimals: { path: "price.decimals", type: Number },
