@@ -1,13 +1,9 @@
 .product-detail-image{
     height: 680px;
     width: 680px;
+    padding-left: 32px;
 }
 
-.product-info-container{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
 .product-info{
     padding-right: 32px;
     list-style: none;
@@ -46,8 +42,14 @@
 .product-price{
     padding-top: 32px;
     padding-bottom: 32px;
-    font-size: 25px;
+    font-size: 20px;
     color: #333333;
+    display: inline-flex;
+    gap: 3px;
+}
+
+.decimals{
+    font-size: 16px;
 }
 
 textarea{
@@ -59,6 +61,7 @@ textarea{
     background-color: white;
     border: white;
     color: #999999;
+    width: 75%;
 }
 
 .title-description{

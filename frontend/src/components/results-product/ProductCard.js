@@ -19,9 +19,12 @@ export const ProductCard = ({
         <div className="card-second-col">
           <ul className="ul-second-col">
             <li className="price">
-              <span>$</span>
+              <span>$ </span>
               <span>
-                {amount}
+                {
+                // parse the price amount to local currency
+                amount.toLocaleString('ARS', {minimumFractionDigits: 0})
+                }
                 {free_shipping && (
                   <img
                     className="shipping-img"

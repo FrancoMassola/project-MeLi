@@ -12,6 +12,7 @@ export const ProductDetailsCard = ({
 }) => {
   //count the number of lines in the product description for text area
   const numberOfRows = description.split(/\r\n|\r|\n/).length;
+  console.log(numberOfRows);
   return (
     <>
       <div className="product-details-container">
@@ -28,7 +29,12 @@ export const ProductDetailsCard = ({
               </li>
               <li className="product-title">{title}</li>
               <li className="product-price">
-                $ {amount},{decimals} {currency}
+                ${" "}
+                {
+                  // parse the price amount to local currency
+                  amount.toLocaleString("ARS", { minimumFractionDigits: 0 })
+                }
+                <div className="decimals">{decimals}</div> {currency}
               </li>
               <li>
                 <button className="button-detail">Comprar</button>
@@ -41,7 +47,7 @@ export const ProductDetailsCard = ({
           <textarea
             defaultValue={description}
             cols="30"
-            rows={String(numberOfRows)}
+            rows={String(numberOfRows*2)}
             disabled
           ></textarea>
         </div>
