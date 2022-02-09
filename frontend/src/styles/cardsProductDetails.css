@@ -29,4 +29,52 @@
     padding: 0;
     display: flex; 
     flex-flow: column; 
+    height:100%;
 }
+
+.product-condition{
+    padding-top: 32px;
+    margin-bottom: 16px;
+    color: #666666;
+    font-size: 20px;
+}
+
+.product-title{
+    color: #333333;
+}
+
+.product-price{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 25px;
+    color: #333333;
+}
+
+textarea{
+    resize: none;
+    overflow: hidden;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    height: 100%;
+    background-color: white;
+    border: white;
+    color: #999999;
+}
+
+.title-description{
+    padding-left: 32px;
+    margin: 0;
+    padding-bottom: 32px;
+    color: #333333;
+}
+
+.button-detail{
+    background-color: #3483FA;
+    color: white;
+    border-radius: 3px;
+    width: 150px;
+    height: 30px;
+    box-shadow: white;
+    border: white;
+}
+

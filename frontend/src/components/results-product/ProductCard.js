@@ -37,7 +37,7 @@ export const ProductCard = ({
           </ul>
         </div>
         <div className="card-third-col">
-          <h2>{condition}</h2>
+          <span className="condition">{condition}</span>
         </div>
       </div>
     </Link>

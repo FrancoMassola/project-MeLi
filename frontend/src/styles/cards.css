@@ -29,6 +29,10 @@
 .card-third-col {
   width: 40%;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  
 }
 
 .ul-list-items {
@@ -54,4 +58,8 @@
 .link-productDetails{
   color: #000000;
     text-decoration: none;
+}
+
+.condition{
+  color: #666666;
 }
