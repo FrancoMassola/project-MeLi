@@ -9,7 +9,7 @@ export const SearchBar = ({ setproductToSearch }) => {
         <div className="logo_ML-box">
           <img src={"/assets/Logo_ML@2x.png"} />
         </div>
-        <div className="input">
+        <div className="searchInput">
           <SearchInput setproductToSearch={setproductToSearch} />
         </div>
       </div>

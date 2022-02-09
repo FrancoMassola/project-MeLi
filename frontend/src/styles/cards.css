@@ -35,8 +35,8 @@
   margin: auto;
   background-color: white;
   list-style: none;
-  margin-top: 20px;
   width: fit-content;
+  padding: 0;
 }
 .ul-second-col {
   list-style: none;
@@ -44,4 +44,9 @@
 
 .price {
   padding-bottom: 32px;
+}
+
+.categories{
+  margin: auto;
+  background-color: #EEEEEE;
 }

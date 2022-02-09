@@ -6,6 +6,7 @@ import { useFetch } from "../../hooks/useFetch";
 import "../../styles/loading.css";
 import "../../styles/cards.css";
 import { ProductCard } from "../ProductCard";
+import { Categories } from "../result-view/Categories";
 
 export const Results = () => {
   const location = useLocation();
@@ -41,7 +42,11 @@ export const Results = () => {
         </div>
       ) : (
         <div className="card-container">
+          
           <ul className="ul-list-items">
+            <div className="categories">
+            <Categories />
+            </div>
             {productArrayToShow.map((product) => {
               console.log(product.id);
               return (

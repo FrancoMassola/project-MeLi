@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
+import '../styles/searchInput.css'
 
 export const SearchInput = ({ setproductToSearch }) => {
   const [formValues, handleInputChange] = useForm({ productToSearch: "" });
@@ -30,6 +31,9 @@ export const SearchInput = ({ setproductToSearch }) => {
           value={productToSearch}
           onChange={handleInputChange}
         />
+        <a type="submit">
+          <img className="searchIcon" src="/assets/ic_Search.png" alt="" />
+        </a>
       </form>
     </>
   );

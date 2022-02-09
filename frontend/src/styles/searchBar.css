@@ -14,15 +14,16 @@ body {
 .logo_ML-box {
   display: flex;
   justify-content: center;
+  margin-left: 15%;
 }
 
-.input {
-  display: flex;
-  justify-content: center;
-  width: 50%;
+.input, .searchInput, form {
+  width: 80%;
+  margin: 0;
 }
 
 img {
   width: 35%;
   line-height: 10px;
 }
+

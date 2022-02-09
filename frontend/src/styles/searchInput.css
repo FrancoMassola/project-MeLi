@@ -1,0 +1,15 @@
+.searchIcon{
+    width: 10px;
+    height: 10px;
+    margin-left: 2px;
+}
+
+input{
+    width: 100%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
