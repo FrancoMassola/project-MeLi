@@ -5,7 +5,7 @@ import "../../styles/cards.css";
 export const ProductCard = ({
   id,
   title,
-  price: { currency, amount, decimals },
+  price: { amount, decimals },
   picture,
   condition,
   free_shipping,
@@ -22,9 +22,10 @@ export const ProductCard = ({
               <span>$ </span>
               <span>
                 {
-                // parse the price amount to local currency
-                amount.toLocaleString('ARS', {minimumFractionDigits: 0})
+                  // parse the price amount to local currency
+                  amount.toLocaleString("ARS", { minimumFractionDigits: 0 })
                 }
+                ,{decimals}
                 {free_shipping && (
                   <img
                     className="shipping-img"

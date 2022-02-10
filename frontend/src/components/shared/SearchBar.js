@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import "../../styles/searchBar.css";
+import React from "react";
 import { SearchInput } from "./SearchInput";
+import "../../styles/searchBar.css";
 
-export const SearchBar = ({ setproductToSearch }) => {
+export const SearchBar = () => {
   return (
     <>
       <div className="container">
@@ -10,7 +10,7 @@ export const SearchBar = ({ setproductToSearch }) => {
           <img src={"/assets/Logo_ML@2x.png"} />
         </div>
         <div className="searchInput">
-          <SearchInput setproductToSearch={setproductToSearch} />
+          <SearchInput />
         </div>
       </div>
     </>

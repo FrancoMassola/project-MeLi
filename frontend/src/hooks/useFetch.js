@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getProducts } from "../helpers/getProducts";
 
 export const useFetch = (url = "", params = "") => {
@@ -14,8 +14,6 @@ export const useFetch = (url = "", params = "") => {
   }, []);
 
   useEffect(() => {
-    console.log(url);
-    console.log(params);
     setState({ data: null, loading: true, error: null });
     const apiResponse = getProducts(url, params);
     //this validation is in case that the component will be dismount before to setState

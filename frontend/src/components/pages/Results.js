@@ -1,14 +1,14 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React from "react";
 import { SearchBar } from "../shared/SearchBar";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { ProductCard } from "../results-product/ProductCard";
+import { Categories } from "../shared/Categories";
 import "../../styles/loading.css";
 import "../../styles/cards.css";
 import "../../styles/categories.css";
-import { ProductCard } from "../results-product/ProductCard";
-import { Categories } from "../shared/Categories";
-import { CategoriesContext } from "../shared/CategoriesContext";
+// import { CategoriesContext } from "../shared/CategoriesContext";
 
 export const Results = () => {
   const location = useLocation();
@@ -19,17 +19,11 @@ export const Results = () => {
 
   const { data, loading } = useFetch(url);
 
-  //state for handle the product to search
-  const [, setproductToSearch] = useState(search);
-
   //I use localstorage to handle the categories of nav bar -- other method for this shared information is using Context -- useContext as a consumer
   // const { categoriesContext, setCategoriesContext } = useContext(CategoriesContext);
 
-  //to handle the component dismount and the setState
-  const isMounted = useRef(true);
-
   //limit to only 4 randoms products to show
-  if (!loading && isMounted.current) {
+  if (!loading) {
     //destruct props of the data, for get items and categories
     var { categories, items } = data;
     var productArrayToShow = [];
@@ -49,7 +43,7 @@ export const Results = () => {
 
   return (
     <>
-      <SearchBar setproductToSearch={setproductToSearch} />
+      <SearchBar />
       {/* loading flag */}
       {loading ? (
         <div id="loading">

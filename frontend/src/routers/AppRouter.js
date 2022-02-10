@@ -9,13 +9,12 @@ import { ProductDetails } from "../components/pages/ProductDetails";
 import { Results } from "../components/pages/Results";
 import { SearchProducts } from "../components/pages/SearchProducts";
 import {
-  CategoriesContext,
-  CategoriesProvider,
+  CategoriesProvider
 } from "../components/shared/CategoriesContext";
 
 export const AppRouter = () => {
   return (
-    <CategoriesProvider>
+    // <CategoriesProvider>
       <Router>
         <Routes>
           <Route path="/items/:id" exact element={<ProductDetails />} />
@@ -24,6 +23,6 @@ export const AppRouter = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
-    </CategoriesProvider>
+    //</CategoriesProvider>
   );
 };

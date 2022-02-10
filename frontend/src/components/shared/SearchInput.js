@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import '../../styles/searchInput.css'
 
-export const SearchInput = ({ setproductToSearch }) => {
+export const SearchInput = () => {
   const [formValues, handleInputChange] = useForm({ productToSearch: "" });
 
   //to navigate to other screens
@@ -17,7 +16,6 @@ export const SearchInput = ({ setproductToSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (productToSearch.trim().length > 2) {
-      setproductToSearch(productToSearch);
       navigate(`/items?search=${productToSearch}`);
     }
   };
@@ -38,8 +36,4 @@ export const SearchInput = ({ setproductToSearch }) => {
       </form>
     </>
   );
-};
-
-SearchInput.propTypes = {
-  setproductToSearch: PropTypes.func.isRequired,
 };

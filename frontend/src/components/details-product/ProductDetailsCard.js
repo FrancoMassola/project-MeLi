@@ -1,18 +1,15 @@
 import React from "react";
 
 export const ProductDetailsCard = ({
-  id,
   title,
   price: { currency, amount, decimals },
   picture,
   condition,
-  free_shipping,
   sold_quantity,
   description,
 }) => {
   //count the number of lines in the product description for text area
   const numberOfRows = description.split(/\r\n|\r|\n/).length;
-  console.log(numberOfRows);
   return (
     <>
       <div className="product-details-container">

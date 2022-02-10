@@ -1,17 +1,14 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { SearchBar } from "../shared/SearchBar";
-import "../../styles/cardsProductDetails.css";
 import { useFetch } from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { ProductDetailsCard } from "../details-product/ProductDetailsCard";
-import "../../styles/loading.css";
 import { Categories } from "../shared/Categories";
-import { CategoriesContext } from "../shared/CategoriesContext";
+import "../../styles/loading.css";
+import "../../styles/cardsProductDetails.css";
+// import { CategoriesContext } from "../shared/CategoriesContext";
 
 export const ProductDetails = () => {
-  //state for handle the product to search
-  const [, setproductToSearch] = useState("");
-
   //get the id param of a product
   const params = useParams();
 
@@ -25,12 +22,11 @@ export const ProductDetails = () => {
   //to handle the pass of props
   if (!loading) {
     var { item } = data;
-    console.log(item);
   }
 
   return (
     <>
-      <SearchBar setproductToSearch={setproductToSearch} />
+      <SearchBar />
       {/* loading flag */}
       {loading ? (
         <div id="loading">
