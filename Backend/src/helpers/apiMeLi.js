@@ -46,6 +46,7 @@ const formatResponse_searchByName = (apiMeliResponse) => {
     //categories
     const { values } = filters.find((category) => category.id === "category");
     const categoryValues = values[0].path_from_root;
+
     //map to a new json response object
     return jsonMapper(
       {
@@ -101,6 +102,7 @@ const formatResponse_searchByName = (apiMeliResponse) => {
                   price: {
                     amount,
                     currency,
+                    decimals: getDecimalsOfPrice(amount),
                   },
                   picture,
                   condition,
@@ -150,6 +152,7 @@ const formatResponse_searchById = (
             price: {
               currency,
               amount,
+              decimals: getDecimalsOfPrice(amount),
             },
             picture,
             condition,
@@ -178,8 +181,10 @@ const formatResponse_searchById = (
           nested: {
             id: { path: "id", type: String },
             title: { path: "title", type: String },
+            price: { path: "price", type: Number },
             currency: { path: "price.currency", type: Number },
             amount: { path: "price.amount", type: Number },
+            decimals: { path: "price.decimals", type: Number },
             picture: { path: "picture", type: String },
             condition: { path: "condition", type: String },
             free_shipping: { path: "free_shipping", type: Boolean },
@@ -191,6 +196,15 @@ const formatResponse_searchById = (
     );
   } else {
     throw "error setting product id";
+  }
+};
+
+const getDecimalsOfPrice = (amount) => {
+  if (String(amount).includes(".")) {
+    let decPart = (String(amount) + "").split(".")[1];
+    return parseInt(decPart);
+  } else {
+    return 0;
   }
 };
 

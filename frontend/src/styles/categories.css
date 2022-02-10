@@ -1,0 +1,32 @@
+.categories-container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #eeeeee;
+  height: 50px;
+}
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 17px;
+}
+
+.icon-categoy {
+  margin-left: 10px;
+}
+
+.categories-containerDetails {
+  margin: auto;
+  background-color: white;
+  width: 70%;
+  padding: 0;
+  display: flex;
+  background-color: #EEEEEE;
+}
+
+.categories {
+  margin: auto;
+  margin-left: 0;
+}

@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+.container {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe600;
+ 
+}
+
+.logo_ML-box {
+  display: flex;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.input, .searchInput, form {
+  width: 80%;
+  margin: 0;
+}
+
+img {
+  width: 35%;
+  line-height: 10px;
+}
+
