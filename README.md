@@ -23,5 +23,5 @@ npm start
 - morgan 1.10.0
 - npm 6.14.13
 - nodemon 2.0.15
-- react 14.0.2
+- react 17.0.2
 - query-string 7.1.1
