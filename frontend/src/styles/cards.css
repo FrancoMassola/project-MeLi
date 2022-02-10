@@ -1,0 +1,58 @@
+.card-container {
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
+
+.product_img {
+  width: 180px;
+  height: 180px;
+  border-radius: 4px;
+  margin: 16px;
+}
+
+.shipping-img {
+  width: 20px;
+  height: 20px;
+}
+
+.card-second-col {
+  width: 50%;
+  height: 50%;
+  margin-top: 4%;
+}
+
+.card-third-col {
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.ul-list-items {
+  margin: auto;
+  background-color: white;
+  list-style: none;
+  width: fit-content;
+  padding: 0;
+}
+.ul-second-col {
+  list-style: none;
+}
+
+.price {
+  padding-bottom: 32px;
+}
+
+.link-productDetails {
+  color: #000000;
+  text-decoration: none;
+}
+
+.condition {
+  color: #666666;
+}
