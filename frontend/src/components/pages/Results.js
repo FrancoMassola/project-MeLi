@@ -11,8 +11,9 @@ import "../../styles/categories.css";
 // import { CategoriesContext } from "../shared/CategoriesContext";
 
 export const Results = () => {
+  //get the data of query string - url
   const location = useLocation();
-  //se queryString to get and parse the value of query
+  //use queryString to get and parse the value of query
   const { search = "" } = queryString.parse(location.search);
 
   const url = `http://localhost:4000/api/items?q=${search}`;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import '../../styles/searchInput.css'
+import "../../styles/searchInput.css";
 
 export const SearchInput = () => {
   const [formValues, handleInputChange] = useForm({ productToSearch: "" });
@@ -31,7 +31,7 @@ export const SearchInput = () => {
           placeholder="Nunca dejes de buscar"
         />
         <button type="submit">
-          <img className="searchIcon" src="/assets/ic_Search.png" alt="" />
+          <img className="searchIcon" src="/assets/ic_Search.png" alt="search-icon" />
         </button>
       </form>
     </>

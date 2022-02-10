@@ -30,7 +30,7 @@ export const ProductCard = ({
                   <img
                     className="shipping-img"
                     src="/assets/ic_shipping@2x.png.png"
-                    alt=""
+                    alt="product"
                   />
                 )}
               </span>

@@ -15,7 +15,7 @@ export const ProductDetailsCard = ({
       <div className="product-details-container">
         <div className="details-firstRow">
           <div className="product-container-image">
-            <img className="product-detail-image" src={picture} alt="" />
+            <img className="product-detail-image" src={picture} alt="product-detail" />
           </div>
           <div className="product-info-container">
             <ul className="product-info">
